@@ -1,0 +1,232 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description" content="Real-time weather dashboard">
+
+  <title>SkyCast | Weather Dashboard</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+
+  <main class="page-shell">
+
+    <!-- Header -->
+    <header class="topbar">
+      <a class="brand" href="#">
+        <span class="brand-mark">✦</span> skyCast
+      </a>
+
+      <span class="live-label">
+        <span class="live-dot"></span>
+        LIVE WEATHER
+      </span>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+
+      <div class="intro">
+        <p class="eyebrow">WEATHER AT A GLANCE</p>
+
+        <h1>
+          Know your sky.<br>
+          <span>Plan your day.</span>
+        </h1>
+
+        <p class="subtitle">
+          Real-time weather updates for the places
+          that matter to you.
+        </p>
+      </div>
+
+      <!-- Search Form -->
+      <form class="search-form" id="searchForm">
+
+        <label class="sr-only" for="cityInput">
+          Enter city name
+        </label>
+
+        <span class="search-icon">⌕</span>
+
+        <input
+          id="cityInput"
+          type="search"
+          placeholder="Search a city..."
+          autocomplete="off"
+          required
+        >
+
+        <button id="searchButton" type="submit">
+          Search →
+        </button>
+
+      </form>
+
+      <p class="search-hint">
+        Try Indore, Mumbai, Delhi or London.
+      </p>
+
+    </section>
+
+    <!-- Weather Section -->
+    <section class="weather-section">
+
+      <div class="section-heading">
+
+        <div>
+          <p class="eyebrow">CURRENT CONDITIONS</p>
+          <h2>Your weather</h2>
+        </div>
+
+        <button
+          class="refresh-button"
+          id="refreshButton"
+          type="button"
+          disabled
+        >
+          ↻ Refresh
+        </button>
+
+      </div>
+
+      <!-- Status Message -->
+      <div id="status" class="status-card">
+
+        <span class="status-icon">☁</span>
+
+        <div>
+          <strong>Ready when you are</strong>
+          <p>
+            Search for a city to see its current weather.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Weather Result -->
+      <div id="weatherContent" class="weather-content hidden">
+
+        <!-- Main Weather Card -->
+        <article class="main-weather-card">
+
+          <div class="location-row">
+
+            <div>
+              <p class="eyebrow">WEATHER IN</p>
+              <h3 id="cityName">—</h3>
+              <p id="localDate" class="muted">—</p>
+            </div>
+
+            <div
+              class="weather-symbol"
+              id="weatherSymbol"
+            >
+              ☀️
+            </div>
+
+          </div>
+
+          <div class="temperature-row">
+
+            <div class="temperature">
+              <span id="temperature">--</span>
+              <sup>°C</sup>
+            </div>
+
+            <div class="condition-block">
+              <strong id="condition">—</strong>
+
+              <span>
+                Feels like
+                <b id="feelsLike">--</b>°C
+              </span>
+            </div>
+
+          </div>
+
+          <div class="card-footer">
+            <span id="dayNight">—</span>
+            <span id="coordinates">—</span>
+          </div>
+
+        </article>
+
+        <!-- Weather Metrics -->
+        <div class="metric-grid">
+
+          <article class="metric-card">
+
+            <div class="metric-top">
+              <span class="metric-icon">💧</span>
+              <span>HUMIDITY</span>
+            </div>
+
+            <strong>
+              <span id="humidity">--</span>
+              <small>%</small>
+            </strong>
+
+            <p>Relative humidity</p>
+
+          </article>
+
+          <article class="metric-card">
+
+            <div class="metric-top">
+              <span class="metric-icon">🌬️</span>
+              <span>WIND SPEED</span>
+            </div>
+
+            <strong>
+              <span id="windSpeed">--</span>
+              <small>km/h</small>
+            </strong>
+
+            <p>Wind near the surface</p>
+
+          </article>
+
+          <article class="metric-card">
+
+            <div class="metric-top">
+              <span class="metric-icon">🌧️</span>
+              <span>PRECIPITATION</span>
+            </div>
+
+            <strong>
+              <span id="precipitation">--</span>
+              <small>mm</small>
+            </strong>
+
+            <p>Current precipitation</p>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <span>✦ SkyCast</span>
+
+      <span>
+        Weather data by Open-Meteo |
+        Built with HTML, CSS & JavaScript
+      </span>
+    </footer>
+
+  </main>
+
+</body>
+</html>
